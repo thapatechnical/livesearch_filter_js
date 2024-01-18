@@ -1,14 +1,12 @@
 const users = document.querySelector('.user-list');
-const userName = document.querySelector("#user"); 
+const userName = document.querySelector("#user");
 
 const userArr = [];
 
 const getUserData = async() => {
     try {
-
         const res = await fetch('https://api.github.com/users');
         const data = await res.json();
-        // console.log(data);
 
         if(data){
             users.innerHTML = ""
@@ -30,9 +28,7 @@ const getUserData = async() => {
                  </div>
                 `
             )
-
             users.appendChild(li);
-
         })
         
     } catch (error) {
